@@ -1,0 +1,12 @@
+function FindProxyForURL(url, host) {
+        // allow direct access to internal servers
+        if (shExpMatch(host, "*.domain.name"))
+        {
+                return "DIRECT";
+        }
+        else if (shExpMatch(host, "server.domain.name"))
+		{
+                return "DIRECT";
+        }
+        return "PROXY proxy.domain.name:80; DIRECT";
+}
